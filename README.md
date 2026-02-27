@@ -2,7 +2,7 @@
 
 >Please read this:
 >
->Any and all resources are "void of warranty" and provided "as-is". This includes this current repository and all publicly facing releases, regardless of whether labeled as `stable` or not. Personal use-case is open and doesn't abide by any licensing restrictions or contractual obligations.
+>Any and all resources are "void of warranty" and provided "as-is". This includes this current repository and all publicly facing releases, regardless of whether labeled as `stable` or not. Personal use-case is open and doesn't abide by any licensing restrictions or contractual obligations. Medical use-case is currently prohibited until explicitly stated otherwise in future licensing.
 
 ## `research-public`
 
