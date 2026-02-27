@@ -1,0 +1,116 @@
+{
+  "contents": [
+    {
+      "role": "user",
+      "parts": [
+        //{
+        //  "inlineData": {
+        //    "mimeType": "<DATA_TYPE>",            // text/plain || text/markdown || text/csv || application/pdf || image/jpeg || image/png || ...
+        //    "data": "<FILE_DATA>"                 // ENCODING: base64
+        //  }
+        //},
+        {
+          "inlineData": {
+            "mimeType": "text/plain",
+            "data": "<FILE_DATA_1>"
+          }
+        },
+        {
+          "inlineData": {
+            "mimeType": "text/csv",
+            "data": "<FILE_DATA_2>"
+          }
+        },
+        {
+          "inlineData": {
+            "mimeType": "application/pdf",          // || text/plain || text/markdown
+            "data": "<FILE_DATA_3>"
+          }
+        },
+        {
+          "text": "<INITIAL_PROMPT>"
+        }
+      ]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": ">MODEL_REASONING<"
+        },
+        {
+          "text": ">MODEL_RESPONSE<"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [
+        {
+          "text": "<USER_PROMPT>"
+        }
+      ]
+    }
+  ],
+  "generationConfig": {
+    "temperature": 0,                                 // *: 1.0 || *: 0
+    //"maxOutputTokens": <MAX_OUT_TOKENS>,            // *: 65,536
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",       // POTENTIAL for PDFs
+    //"thinkingConfig": {
+    //  "thinkingLevel": "HIGH"                       // 3 *: HIGH, 2.5 *: thinkingBudget=24576
+    //},
+    "stopSequences": ["\"\"\""],
+    //"topP": <TOP_P>,                                // *: 0.95
+    //"topK": <TOP_K>,                                // *: 64
+    "seed": 1//,
+    //"responseMimeType": "application/json",         // POTENTIAL scheming, searching DISALLOWED, STANDALONE tooling
+    //"responseSchema": {                             // -||-
+    //  <SCHEMA_JSON>
+    //}
+  },
+  "safetySettings": [
+    {
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    },
+    {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    },
+    {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    },
+    {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }//,
+    //{
+    //  "category": "HARM_CATEGORY_JAILBREAK",        // POTENTIAL autonomy
+    //  "threshold": "OFF"
+    //}
+  ],
+  //"tools": [
+    //{
+    //  "codeExecution": {}                           // POTENTIAL analysis, searching COMPATIBLE, STANDALONE tooling
+    //},
+    //{
+    //  "functionDeclarations": [                     // POTENTIAL function, searching DISALLOWED, STANDALONE tooling
+    //    <FUNCTION_JSON>
+    //  ]
+    //},
+    //{
+    //  "googleSearch": {}                            // OPTIONAL searching
+    //},
+    //{
+    //  "urlContext": {}                              // OPTIONAL URL visit, searching COMPATIBLE
+    //}
+  //],
+  "systemInstruction": {
+    "parts": [
+      {
+        "text": "<ROOT_PROMPT>"
+      }
+    ]
+  }
+}

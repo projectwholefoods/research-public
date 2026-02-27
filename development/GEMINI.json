@@ -1,0 +1,17 @@
+{
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "test"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "thinkingConfig": {
+        "thinkingLevel": "LOW"
+      }
+    }
+}

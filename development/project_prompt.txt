@@ -1,0 +1,45 @@
+• Stats
+
+    Gender:                 <...>
+    Age:                    <...>
+    Weight:                 <...>
+    Height:                 <...>
+    Origin:                 <...>
+
+
+• Goals
+
+    MIN weekly calories:            <...>
+    Macro caloric ratio (p/f/c):    <...>
+
+
+• Source
+
+    Attached CSV table "product_data.csv" contains products (hereinafter foods) and all the related nutrition / value info;
+    ID column should be used as explicit reference for the foods;
+
+
+• Output
+
+    Attached document "output_template...." contains the desired output structure; Follow it as such for each of the weeks;
+
+
+• Rules
+
+    Whilst aiming for accuracy, it's okay for values to diverge slightly (eg. 34/36/30 instead of perfect 35/35/30 ratio);
+
+    Whilst consistency preferred, daily goals can fluctuate, reasonably (as long as weekly goals are met);
+
+    EVERY food and EXCLUSIVELY only from the table shall be used across all the weeks;
+
+    Weeks preferably differ GREATLY, although if first requirement is met, useful foods can be repeated / shared across weeks;
+
+    Individual days shall be UNIQUE, but are fine to share more similarities (expected due to weekly groceries - efficiency).
+
+
+• Procedure
+
+    Analyze the source;
+    Adhere to the goals & rules;
+    Synthesize the solution;
+    Generate output as laid out;

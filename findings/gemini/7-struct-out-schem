@@ -1,0 +1,88 @@
+#!/bin/bash
+set -e -E
+
+GEMINI_API_KEY="$GEMINI_API_KEY"
+MODEL_ID="gemini-3-pro-preview"
+GENERATE_CONTENT_API="streamGenerateContent"
+
+cat << EOF > request.json
+{
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "INSERT_INPUT_HERE"
+          },
+        ]
+      },
+    ],
+    "generationConfig": {
+      "thinkingConfig": {
+        "thinkingLevel": "HIGH",
+      },
+      "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+      "responseMimeType": "application/json",
+      "responseSchema": {
+          "type": "object",
+          "properties": {
+            "myproperty": {
+              "type": "string"
+            },
+            "myproperty1": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "myproperty2": {
+              "type": "object",
+              "properties": {
+                "mynestedproperty": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "mynestedproperty"
+              ],
+              "propertyOrdering": [
+                "mynestedproperty"
+              ]
+            },
+            "myproperty3": {
+              "type": "string",
+              "enum": [
+                "mynestedproperty1"
+              ]
+            }
+          },
+          "required": [
+            "myproperty1",
+            "myproperty2",
+            "myproperty3"
+          ],
+          "propertyOrdering": [
+            "myproperty",
+            "myproperty1",
+            "myproperty2",
+            "myproperty3"
+          ]
+        },
+    },
+    "tools": [
+      {
+        "googleSearch": {
+        }
+      },
+    ],
+    "systemInstruction": {
+    },
+}
+EOF
+
+curl \
+-X POST \
+-H "Content-Type: application/json" \
+"https://generativelanguage.googleapis.com/v1beta/models/${MODEL_ID}:${GENERATE_CONTENT_API}?key=${GEMINI_API_KEY}" -d '@request.json'
+
+

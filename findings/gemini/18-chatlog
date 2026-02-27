@@ -1,0 +1,66 @@
+#!/bin/bash
+set -e -E
+
+GEMINI_API_KEY="$GEMINI_API_KEY"
+MODEL_ID="gemini-3-pro-preview"
+GENERATE_CONTENT_API="streamGenerateContent"
+
+cat << EOF > request.json
+{
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "This is my first message."
+          },
+        ]
+      },
+      {
+        "role": "model",
+        "parts": [
+          {
+            "text": "**Initiating Conversation Analysis**\n\nI've begun analyzing the user's initial input, which is \"This is my first message.\" My primary intent here is to decipher the user's implicit intention in this opening statement, namely, whether they are greeting, starting a conversation or something else. I am now working on determining an appropriate response to the user.\n\n\n"
+          },
+          {
+            "text": "Hello! It's nice to meet you. How can I help you today?"
+          },
+        ]
+      },
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "INSERT_INPUT_HERE"
+          },
+        ]
+      },
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 65535,
+      "thinkingConfig": {
+        "thinkingLevel": "HIGH",
+      },
+      "stopSequences": [
+        "\"\"\""
+      ],
+      "topP": 0.85,
+      "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    },
+    "tools": [
+      {
+        "googleSearch": {
+        }
+      },
+    ],
+    "systemInstruction": {
+    },
+}
+EOF
+
+curl \
+-X POST \
+-H "Content-Type: application/json" \
+"https://generativelanguage.googleapis.com/v1beta/models/${MODEL_ID}:${GENERATE_CONTENT_API}?key=${GEMINI_API_KEY}" -d '@request.json'
+
+
