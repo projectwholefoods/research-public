@@ -18,6 +18,7 @@ More incremental releases will follow. Autonomous seclusion of credentials from 
 - For original source, we also include direct backing of the data sources. Only for referencial[[1]](#1) use: [sources-public](http://google.com)
 - For a recommended contextual input example (version `1.0`: textual prompts and files structure) visit: [wholefoods-public](http://google.com)
 
+## Footnotes
 >
 ><a id="1">[1]</a>  `sources-public` contain partial visual clues to prefill our database and **DOES NOT** contain detailed nutrional information. 
 For complete reference please contant our developers (`ermu at wholefoods dot lifestyle`) or please kindly wait for an upcoming `stable` release.
