@@ -14,9 +14,9 @@ More incremental releases will follow. Autonomous seclusion of credentials from 
 
 ## Additional resources
 
-- For the actual data sources including all the `foods` related information seek templates in this repo: [data_source](http://google.com)
-- For original source, we also include direct backing of the data sources. Only for referencial[[1]](#1) use: [sources-public](http://google.com)
-- For a recommended contextual input example (version `1.0`: textual prompts and files structure) visit: [wholefoods-public](http://google.com)
+- For the actual data sources including all the `foods` related information seek templates in this repo: [data_source](https://github.com/projectwholefoods/data_source)
+- For original source, we also include direct backing of the data sources. Only for referencial[[1]](#1) use: [sources-public](https://github.com/projectwholefoods/sources-public)
+- For a recommended contextual input example (version `1.0`: textual prompts and files structure) visit: [wholefoods](https://github.com/projectwholefoods/wholefoods)
 
 ## Footnotes
 >
